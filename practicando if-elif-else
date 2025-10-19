@@ -1,0 +1,228 @@
+"""Bruno gestiona un pequeño comercio y quiere saber qué producto tuvo 
+el mejor desempeño de ventas el mes pasado. Registró la cantidad vendida
+ de dos productos: manzanas y plátanos. Ahora, necesita escribir 
+ un programa que identifique y muestre cuál de ellos tuvo más ventas.
+
+Crea un programa que reciba el número de ventas de los dos productos 
+y muestre un mensaje indicando cuál de ellos vendió más. 
+Si las cantidades son iguales, muestra un mensaje diciendo que hubo un empate."""
+
+cantidad_manzanas = int(input('Digite la cantidad de manzanas vendidos: '))
+cantidad_plátanos = int(input('Digite Cantidad de plátanos vendidos: '))
+
+if cantidad_plátanos > cantidad_manzanas:
+    print('Los Plátanos tuvieron mas ventas')
+elif cantidad_manzanas == cantidad_plátanos:
+    print('Igual número de ventas')
+else: 
+    print('Las Manzanas tuvieron mas ventas')
+
+
+"""Lucas trabaja en TI y necesita garantizar que la
+ temperatura de una sala de servidores no supere los 25°C. 
+ Quiere un programa que reciba la temperatura actual como entrada y,
+ si es necesario, muestre un mensaje de alerta."""
+
+temperatura_máxima = 25
+temperatura_actual = int(input('Digite la temperatura actual: '))
+
+if temperatura_actual > temperatura_máxima:
+    print('⚠️ Alerta la temperatura esta por encima del límite máximo')
+elif temperatura_actual == temperatura_máxima:
+    print ('La temperatura es la adecuada')
+else:
+    print('La Temperatura es menor a 25°')
+
+"""Camila está organizando un proyecto y necesita calcular el tiempo
+ total necesario para concluir tres actividades: A, B y C. Sin embargo,
+si alguna actividad tiene un número de días negativo, 
+el código debe avisar que los valores ingresados son inválidos 
+y no calcular el total.
+
+Escribe un programa que reciba el número de días de tres actividades
+ y muestre el tiempo total del proyecto. Si algún valor es negativo,
+muestra un mensaje informando el error."""
+
+print('Ingreso de días de las actividades de Camila')
+
+días_a = int(input('Ingre el número de días para la actividad A: '))
+días_b = int(input('Ingre el número de días para la actividad B: '))
+días_c = int(input('Ingre el número de días para la actividad C: '))
+
+if días_a < 0 or días_b < 0 or días_c < 0:
+    print('¡Los valores ingresados son inválidos!')
+    print('El número para una actividad no puede ser negativo')
+else: 
+    tiempo_total = días_a + días_b + días_c
+    print('Cálculo exitoso')
+    print(f'El tiempo total es: {tiempo_total} días')
+
+"""Anna Júlia está creando un sistema para calcular el Índice de 
+Masa Corporal (IMC) y proporcionar recomendaciones básicas. 
+El programa debe recibir el peso y la altura de una persona y mostrar 
+el valor del IMC, además de indicar si está por debajo del peso, 
+con peso normal o por encima del peso. Crea un programa que 
+reciba el peso (en kg) y la altura (en metros) y calcule el 
+IMC usando la fórmula: IMC = peso / (altura ** 2)Luego, muestra 
+el valor del IMC y un mensaje indicando si está por debajo 
+del peso (IMC < 18.5), peso normal (18.5 <= IMC < 25) o 
+por encima del peso (IMC >= 25)."""
+
+peso = float(input('Digite su peso en kilogramos: '))
+altura = float(input('Digite su altura en metros: '))
+
+if peso <= 0 or altura <= 0:
+    print('El peso y la altura deben ser valores positivos.')
+else: 
+    imc = peso / (altura ** 2)
+    print(f"\n Su IMC es: **{imc:.2f}**")
+    if imc < 18.5:
+        clasificacion = "Por debajo del peso" 
+    elif imc >= 18.5 and imc < 25:
+        clasificacion = "Peso normal (Saludable)"
+    else:
+        clasificacion = "Por encima del peso (Sobrepeso u Obesidad)"
+    print(f"Clasificación: **{clasificacion}**")
+
+    """Laura está desarrollando un sistema para saber si una persona
+    tiene derecho a recibir un beneficio social. Para eso,
+    la persona debe cumplir las siguientes condiciones:
+
+    Tener ingresos menores o iguales a $2,000.
+    Tener al menos un hijo o hija."""
+
+    ingresos_mensuales = float(input('Indique sus ingresos mensuales: '))
+    cantidad_de_hijos = int(input('Indique cuantos hijos tiene: '))
+
+    if ingresos_mensuales <= 2000 and cantidad_de_hijos >= 1:
+        print('La persona cumple con los requisitos')
+    else:
+        print('No cumple con los requisitos')
+
+
+"""Una empresa evalúa a sus empleados con base en dos criterios:
+
+Puntuación de desempeño (de 0 a 10)
+Años trabajados
+Reglas:
+
+Si la puntuación es mayor o igual a 7:
+Si trabajó más de 5 años: "Elegible para ascenso"
+Si trabajó 5 años o menos: "Buen desempeño, sigue así"
+Si la puntuación es menor a 7: "Necesita mejorar"
+Crea un programa que reciba la puntuación y los años trabajados,
+ y muestre el mensaje adecuado."""
+
+    puntuación_desempeño = int(input('Digite la puntuación del trabajador: '))
+    años_trabajados = int(input('Digite los años trabajados: '))
+
+    if puntuación_desempeño >= 7 and años_trabajados >5:
+        print('Elegible para ascenso')
+    elif puntuación_desempeño < 7:
+        print('Necesita mejorar')
+    else:
+        print('Buen desempeño, sigue asi')
+
+
+"""Estás desarrollando un pequeño juego. El usuario ingresa 
+un número entero y el programa debe evaluar lo siguiente:
+Si el número es divisible por 3 y 5, muestra: "¡Número mágico!"
+Si solo es divisible por 3, muestra: "Divisible por 3"
+Si solo es divisible por 5, muestra: "Divisible por 5"
+Si no es divisible por ninguno, muestra: "No es un número mágico"
+Este tipo de lógica es muy útil en juegos, validaciones o filtros."""
+
+
+numero = int(input('Ingrese un número entero: '))
+
+if (numero % 3 == 0) and (numero % 5 == 0):
+    print('¡Número mágico!')
+elif numero % 3 == 0:
+    print('Divisible por 3')
+elif numero % 5 == 0:
+    print('Divisible por 5')
+else:
+    print('No es un número mágico')
+
+
+"""Una escuela otorga becas según tres criterios:
+
+Ingreso familiar mensual.
+Promedio del estudiante.
+Asistencia (en porcentaje).
+Reglas:
+
+Si el ingreso es menor a $1,500 y el promedio es mayor a 8.0 
+y la asistencia es al menos 90% → "Beca completa"
+Si el ingreso es menor a $2,500 y promedio mayor a 7.0 y 
+asistencia al menos 85% → "Media beca"
+En otros casos → "No elegible para beca"""
+
+
+ingreso_familiar = int(input('Indique el ingreso familiar ensual: '))
+promedio_estudiante = float(input('Indique promedio del estudiante: '))
+asistencia_porcentaje = float(input('Indique porcentaje del estudiante: '))
+
+if ingreso_familiar < 1500 and promedio_estudiante > 8.0 and asistencia_porcentaje >= 90:
+    print('Beca completa')
+elif ingreso_familiar < 2500 and promedio_estudiante > 7.0 and asistencia_porcentaje >= 85:
+    print('Media beca')
+else:
+    print('No elegible para la beca')
+
+"""Un sistema de transporte cobra según la edad del pasajero 
+y la distancia recorrida:
+
+Menores de 6 años: Viajan gratis.
+De 6 a 18 años:
+Hasta 20 km: $1.50
+Más de 20 km: $2.50
+Mayores de 18:
+Hasta 20 km: $2.50
+Más de 20 km: $4.00
+Crea un programa que reciba la edad y distancia, 
+y muestre el valor a pagar."""
+
+edad_pasajero = int(input('Indique la edad del pasajero: '))
+distancia_recorrida = int(input('Indique la distancia recorrida: '))
+
+if edad_pasajero < 6:
+    print('El pasajero viaja gratis')
+elif edad_pasajero <= 18:
+    if distancia_recorrida <= 20:
+    print ('El costo es $1.5')
+    else:
+    print('El costo es $2.50')
+else:
+    if distancia_recorrida <= 20:
+    print('El costo es de $2.5')
+    else:
+    print('El costo es $4.0')
+    
+
+"""Una empresa evalúa su trimestre con base en:
+
+Ingresos totales
+Gastos totales
+Número de nuevos clientes
+Clasificación:
+
+Si ingresos - gastos > $10,000 y más de 50 nuevos clientes → "Trimestre Excelente"
+Si ingresos - gastos > $5,000 y al menos 20 clientes → "Trimestre Bueno"
+Si ingresos - gastos > 0 → "Trimestre Regular"
+Si ingresos - gastos ≤ 0 → "Trimestre Deficitario""""
+
+
+ingresos_totales = float(input('Indique los ingresos totales: '))
+gastos_totales = float(input('Indique los gastos totales: '))
+numero_nuevos_clientes = int(input('Indique la cantidad de nuevos clientes: '))
+ganancia_neta = ingresos_totales-gastos_totales
+
+if ganancia_neta > 100000 and numero_nuevos_clientes >= 50:
+    print('Trimestre excelente')
+elif ganancia_neta > 5000 and numero_nuevos_clientes >= 20:
+    print('Trimestre bueno')
+elif ganancia_neta > 0:
+    print('Timestre regular')
+else:
+    print('Trimestre Deficitiario')
